@@ -11,19 +11,7 @@ define(TPL, "/html/default/");
 //include_once ROOR_P."/".ROOT_PATH."/".ROOT_FILE;
 include_once ROOR_P."/".ROOT_PATH."/funlib.php";
 include_once ROOR_P."/smarty/Smarty.php";
-define(WEBNAME,"111");
-define(TITLE_T,"222");
-define(CSS_NAME,"pub.css");
-define(JS_NAME,"pub.js");
-define(CSS_PATH,TPL."css/");
-define(JS_PATH,TPL."js/");
-define(KEY_1,"keyworks");
-define(KEY_2,"description");
-define(HOST_NAME, "localhost");
-define(DATA_USER, "jiaxiao");
-define(DATA_PASS, "lexundatalgsg@.");
-define(DATA_BASE, "jiaxiao");
-define(DATA_CHER, "utf8");
+
 spl_autoload_register(Mydefineautoload);
 	function Mydefineautoload($class) {
 		$class = strtolower($class);
