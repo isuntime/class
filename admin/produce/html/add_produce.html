@@ -1,0 +1,88 @@
+{#$Html_head#}
+<script type='text/javascript' src='../layer/layer.js'></script>
+<input type="hidden" value="{#$P_I[0].r_id#}" id="p_r_id" />
+<div class="html_main" id="sun_main">
+    <ul class="html_body" id="my_m">
+        <li id="tm_1">
+            <m_t style="width:101px;border-right:none;z-index:889;">基本信息</m_t>
+            <m_c style="top:-40px;display: inline-block;">
+                <cont>
+                    <r_l>产品名称</r_l>
+                    <input type="text" value="{#$P_I[0].name#}" id="name" onChange="a_s('name')" />
+                </cont>
+                <cont>
+                    <r_l>销售价格</r_l>
+                    <input type="text" value="{#$P_I[0].price#}" id="price" onChange="a_s('price')" />
+                </cont>
+                <cont>
+                    <r_l>发布状态</r_l>
+                    <tit class="row_right" id="p_state">
+                        <span id="p_s_value">{#$P_I[0].state#}</span>
+                        <ul id="son">
+                            <li>产品上架</li>
+                            <li>产品下架</li>
+                        </ul>
+                    </tit>
+                </cont>
+                <cont>
+                    <up_imag>
+                        <btn onclick="file.click()">文件浏览</btn>
+                        <input type="file" name="file" id="UpFileIds"/>
+                        <btn onclick="UpladFiles()" class="colo">上传</btn>
+                    </up_imag>
+                </cont>
+                <show_im id="imager_showss" style="background-image:url({#$P_I[0].pic#});"></show_im>
+            </m_c>
+        </li>
+        <li id="tm_2">
+            <m_t>类别属性</m_t>
+            <m_c style="display:none;top:-80px;z-index:891;">
+                <dl>
+                    <t_b>属性名</t_b>
+                    <dd style="border: 1px solid #ffffff;text-indent: 10px;width: 500px;">属性值</dd>
+                </dl>
+{#section name=s loop=$C#}
+                <dl>
+                    <t_b>{#$C[s].name#}</t_b>
+                    <dd>
+                        <input id="{#$C[s].s_id#}" onclick="cpcl('{#$C[s].r_id#}')" value="{#$C[s].value#}"/>
+                        <div id="{#$C[s].r_id#}" class="dlm"></div>
+                    </dd>
+                </dl>
+{#/section#}
+            </m_c>
+        </li>
+        <li id="tm_3">
+            <m_t>产品属性</m_t>
+            <m_c style="display:none;top:-120px;z-index:892;">
+{#section name=a loop=$A#}
+                <dl>
+                    <t_b>{#$A[a].name#}</t_b>
+                    <dd>
+                        <input id="{#$A[a].r_id#}" onclick="cpal('{#$A[a].r_id#}')" value="{#$A[a].value#}"/>
+                        <div id="r_{#$A[a].r_id#}" class="dlm"></div>
+                    </dd>
+                </dl>
+{#/section#}
+            </m_c>
+        </li>
+        <li id="tm_4">
+            <m_t>图片上传</m_t>
+            <m_c style="display:none;top:-160px;z-index:893;">
+                <im_l id="im_v">
+{#section name=p loop=$I#}
+                    <im_d onDBLclick="im_del('{#$I[p].s_id#}')" style="background-image:url({#$I[p].path#}) "></im_d>
+{#/section#}
+                </im_l>
+                <cont>
+                    <up_imag>
+                        <btn onclick="file.click()">文件浏览</btn>
+                        <input type='file' name='file' id="UpFileId" />
+                        <btn onclick="UpladFile()" class="colo">确定上传</btn>
+                    </up_imag>
+                </cont>
+                <note>双击图片即可删除图片！</note>
+            </m_c>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,243 @@
+{#include file="top.html"#}
+
+<div id="app">
+    <div class="container-fluid">
+        <div class="row clearfix">
+            <div class="col-xs-12 clearfix">
+                <header class="clearfix">
+                    <nav class="navbar navbar-weixin-nav navbar-fixed-top" role="navigation">
+                        <div class="container-fluid">
+                            <div class="navbar-header">
+                                <span class="navbar-brand weixin-nav-a text-center">考试时间</span>
+                            </div>
+
+                        </div>
+                    </nav>
+                </header>
+                <form class="form-horizontal" id="retestform">
+                    <h1 class="center-block text-center regform form-group">考试申请</h1>
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">身份证号码</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control  noempty" id="national_id" name="national_id"
+                                   v-model="appinfo.national_id">
+                        </div>
+                        <div class="col-sm-2">
+                            <button type="button" class="btn btn-default" @click="nameFilter">查询</button>
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">姓名</label>
+                        <div class="col-sm-6">
+                            <p class="form-control-static col-sm-4 border" v-text="appinfo.name"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+
+                        <label for="student_id" class="col-sm-4 control-label">学号</label>
+                        <div class="col-sm-6">
+                            <p class="form-control-static col-sm-4 border" v-text="appinfo.student_id"></p>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="" class="col-sm-4 control-label">考试科目</label>
+                        <div class="col-sm-6">
+                            <p class="form-control-static col-sm-4 border" v-text="appinfo.subject.subjectname"></p>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="testtime" class="col-sm-4 control-label">考试时间</label>
+                        <div class="col-sm-6">
+                            <input type="text" class="form-control findtime noempty" id="testtime" name="testtime">
+                            <span id="coachhelp" class="help-block hidden">时间不能为空</span>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <div class="col-sm-offset-4 col-sm-2">
+                            <button type="button" class="btn btn-primary" v-on:click.prevent="subform">提交</button>
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div>
+        <div class="regform">
+            <a class="btn btn-warning" href="http://bzrdjx.com/finance.php?model=test" target="_blank">立即缴费</a>
+            <table class="table table-bordered table-hover ">
+
+                <thead>
+                <td>订单编号</td>
+                <td>缴费金额</td>
+                <td>考试时间</td>
+                <td>缴费状态</td>
+                <td>考试次数</td>
+                </thead>
+                <tbody>
+                <tr v-for="item in appinfo.record" v-bind:class="{danger:!item.pay_state}">
+                    <td v-text="item.order_id"></td>
+                    <td v-text="item.money"></td>
+                    <td v-text="item.d_time"></td>
+                    <td v-text="">{{item.pay_state|pay_mentfilter}}</td>
+                    <td v-text="item.times"></td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+        <div class="modal fade" id="messageModel" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+             aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title" id="myModalLabel"></h4>
+                    </div>
+                    <div class="modal-body" v-text="message"></div>
+                    <div class="modal-footer">
+                        <!--<button type="button" class="btn btn-primary" id="delstudent" v-on:click="toNext">下一步</button>-->
+                        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            appinfo: {
+                student_id: '',
+                subject: {
+                    subjectname: '',
+                },
+                testtime: '',
+
+            },
+            formfiter: true,
+            subjectlist: '',
+            message: '',
+            formaction: "insert",
+        },
+        filters: {
+            pay_mentfilter: function(value) {
+                if (value == true) {
+                    return "已交费";
+                } else {
+                    return "未交费";
+                }
+            }
+        },
+        mounted: function() {
+            this.$nextTick(function() {
+                // DOM 现在更新了
+                // `this` 绑定到当前实例
+
+            });
+        },
+        methods: {
+
+            subform: function() {
+                var _self = this;
+                if (this.formfiter == false) {
+                    _self.message = '学员已经申请考试';
+                    $('#messageModel').modal('show');
+                    return;
+                } else {
+                    this.gettime();
+                    var dataobj = {
+                        model: "retest",
+                        action: this.formaction,
+                        data: {
+                            student_id: this.appinfo.student_id,
+                            subjecttype: this.appinfo.subject.subject_id,
+                            testtime: this.appinfo.testtime,
+                            pay_state: '0',
+                            order_id: '',
+                            money: this.appinfo.subject.subject_price,
+                            subjecttype_name: this.appinfo.subject.subjectname,
+                        },
+                        where: { student_id: this.appinfo.student_id },
+                    };
+                    if (this.formfiter == true && forminspect('retestform',dataobj.data) == true) {
+                        if (this.formaction == 'edit') {
+                            dataobj.where = { id: this.appinfo.id };
+                        }
+                        $.ajax({
+                            url: comUrl.student,
+                            type: "post",
+                            data: dataobj,
+                            dataType: "json",
+                            success: function(data) {
+                                if (data.code == true) {
+                                    _self.message = data.msg;
+                                    _self.formfiter=false;
+                                    $('#messageModel').modal('show');
+                                    $('#myModal').modal('hide');
+                                    _self.nameFilter();
+                                } else {
+                                    _self.message = data.msg;
+                                    $('#messageModel').modal('show');
+
+                                }
+
+                            },
+                            error: function(XMLHttpRequest, textStatus, errorThrown) {
+                                _self.message = '提交失败，请再次尝试';
+                                $('#messageModel').modal('show');
+                            }
+                        });
+
+                    }
+                }
+
+            },
+            nameFilter: function() {
+                var _self = this;
+                var dataobj = {
+                    model: "retest",
+                    action: 'check',
+                    where: { national_id: this.appinfo.national_id }
+                };
+                $.ajax({
+                    url: comUrl.student,
+                    type: "post",
+                    data: dataobj,
+                    dataType: "json",
+                    success: function(data) {
+                        if (data.code == true) {
+                            _self.formfiter = true;
+                            _self.appinfo = data;
+                        } else {
+                            _self.message = data.msg;
+                            _self.formfiter = false;
+                            _self.appinfo = data;
+                            $('#messageModel').modal('show');
+                        }
+
+                    }
+                });
+            },
+            gettime: function() {
+                this.$set(this.appinfo, 'testtime', $("#testtime").val());
+            }
+        },
+
+    });
+
+</script>
+
+{#include file="footer.html"#}

@@ -1,0 +1,42 @@
+﻿<script src="//shop.30ke.com/admin/html/js/news.content.js" charset="utf-8"></script>
+<div class="ht_ma">
+    <div class="h_ma">
+        <dl class='row' ondblclick="show_input('name')">
+            <dd class="rows" style="text-align:right;width:60px;">Name:</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="name">{#$CO[0].name#}</dd>
+        </dl>
+        <dl class='row' ondblclick="show_input('random_id')">
+            <dd class="rows" style="text-align:right;width:60px;">Rand_id:</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="random_id">{#$CO[0].random_id#}</dd>
+        </dl>
+        <dl class='row' ondblclick="show_input('count')">
+            <dd class="rows" style="text-align:right;width:60px;">Count:</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="count">{#$CO[0].count#}</dd>
+        </dl>
+        <dl class='row' ondblclick="show_input('send_time')">
+            <dd class="rows" style="text-align:right;width:60px;">SendTime</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="send_time">{#$CO[0].send_time#}</dd>
+        </dl>
+        <dl class='row' ondblclick="show_input('imager')">
+            <dd class="rows" style="text-align:right;width:60px;">Imager:</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="imager">{#$CO[0].imager#}</dd>
+        </dl>
+        <dl class='row' ondblclick="show_input('class_id')">
+            <dd class="rows" style="text-align:right;width:60px;">Class_id:</dd>
+            <dd class="rows" style="text-indent:5px;width:180px;" id="class_id">{#$CO[0].l_id#}</dd>
+        </dl>
+    </div>
+    <div class="h_ma" style="margin-left:5px;width:492px;">
+        <dl class="row" id="editer">
+            <dd class="rows" id="et" style="text-align:right;width:60px;">waitting:</dd>
+            <dd class="rows" id="ec" style="text-indent:5px;width:180px;">edit</dd>
+        </dl>
+    </div>
+</div>
+    <div class="editer">
+        <form class="layui-form">
+            <div class="layui-form-item">
+                <textarea id="demo" style="display: none;" class="layui-hide" value="{#$CO[0].content#}"></textarea>
+            </div>
+        </form>
+    </div>

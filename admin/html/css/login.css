@@ -1,0 +1,13 @@
+body {
+    background-color: #50c8dc;
+}
+
+#main {
+    width: 500px;
+    height: 400px;
+    position: fixed;
+    top: 30%;
+    left: 35%;
+    border-radius: 10px;
+    border: 1px solid #50fbaa;
+}

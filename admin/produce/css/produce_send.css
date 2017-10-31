@@ -1,0 +1,225 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+
+.sun_main {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+    background: #d9d9d9;
+}
+
+.sun_ul {
+    position: relative;
+    width: 1090px;
+    padding: 0px;
+    height: 620px;
+    margin: 0px;
+}
+
+.sun_ul li {
+    position: relative;
+    height: 40px;
+    width: 100px;
+    list-style: none;
+    margin-bottom: 10px;
+    z-index: 999;
+}
+
+.li_title {
+    position: relative;
+    height: 38px;
+    border: 1px solid #ffffff;
+    width: 100px;
+    line-height: 38px;
+    text-indent: 10px;
+    color: #ffffff;
+    background: #b9b9b9;
+    z-index: 999;
+}
+
+.li_content {
+    position: relative;
+    min-height: 400px;
+    width: 978px;
+    border: 1px solid #ffffff;
+    left: 101px;
+    padding: 5px;
+    background: #cccccc;
+}
+
+.li_content .content_row {
+    position: relative;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.content_row .row_left {
+    position: relative;
+    height: 30px;
+    width: 100px;
+    border: 1px solid #ffffff;
+    float: left;
+    line-height: 30px;
+    text-indent: 10px;
+    color: #ffffff;
+}
+
+.content_row .row_right {
+    position: relative;
+    height: 30px;
+    float: left;
+    width: 150px;
+}
+
+.content_row .title {
+    position: relative;
+    height: 30px;
+    width: 148px;
+    border: 1px solid #fff;
+    line-height: 28px;
+    text-align: center;
+    border-left: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.content_row ul {
+    position: relative;
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    width: 150px;
+}
+
+.content_row ul li {
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    width: 148px;
+    border: 1px solid #fff;
+    border-top: none;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+
+/* 用于第二个li*/
+
+.li_content dl {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 620px;
+}
+
+.li_content dl #table_border {
+    border: 1px solid #ffffff;
+    border-right: none;
+    text-indent: 10px;
+    height: 30px;
+}
+
+.li_content dl dd {
+    position: relative;
+    float: left;
+    height: 28px;
+    width: 200px;
+    margin: 0px;
+    line-height: 28px;
+    color: #fff;
+    background: #c1c1c1;
+}
+
+.li_content dl dd .disp_list_menu {
+    position: relative;
+    width: 300px;
+    display: none;
+    z-index: 9999;
+}
+
+.li_content dl dd .disp_list_menu .xx_list {
+    height: 30px;
+    border: 1px solid #eeeeee;
+    color: #ffffff;
+    background: #999999;
+    border-top: none;
+    width: 300px;
+    text-indent: 10px;
+    z-index: 9999;
+}
+
+input {
+    position: relative;
+    text-indent: 10px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+}
+
+.li_content #imager_view_s {
+    position: relative;
+    width: 970px;
+    height: 105px;
+    padding: 5px;
+}
+
+#imager_view_s .imager_display {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
+}
+
+
+/* 下面是图片上传的按钮*/
+
+.li_content #up_imager {
+    position: relative;
+    height: 30px;
+    line-height: 30px;
+    width: 820px;
+    text-indent: 27px;
+    float: left;
+    text-indent: 0px;
+}
+
+#up_imager input {
+    position: relative;
+    left: -160px;
+    height: 30px;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+    width: 82px;
+}
+
+#up_imager .mybtn {
+    position: relative;
+    background: #ea003a;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    width: 80px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+#imager_showss {
+    position: relative;
+    float: left;
+    height: 200px;
+    width: 200px;
+}

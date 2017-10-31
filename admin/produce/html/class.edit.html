@@ -1,0 +1,26 @@
+<script type='text/javascript' src='../../ueditor/ueditor.config.js'></script>
+<script type='text/javascript' src='../../ueditor/ueditor.all.min.js'></script>
+<script type='text/javascript' src='produce/js/class.edit.js'></script>
+<script type='text/javascript' src='../layer/layer.js'></script>
+<input type="hidden" value="{#$C_E[0].r_id#}" id="r_id">
+<div class="main_html">
+    <hm id="class_list">
+        <et id="{#$C_E[0].r_id#}">
+            <span class="btn">分类属性 / Class /Att</span>
+            <input class="ipt" id="ipt" type="text" />
+            <span class="btn" onclick="ad_new_class()">确定提交 / Submit</span>
+            <span class="web_state" id="web_state"></span>
+        </et>
+        {#section name=q loop=$P_A#}
+        <ls id="{#$P_A[q].r_id#}">
+            <lsl id="father" onclick="c_t('{#$P_A[q].r_id#}')" style="height:{#$P_A[q].h#}px;">{#$P_A[q].name#}</lsl>
+            {#assign var=C value=$P_A[q].value#}
+            <lsr id="son" style="height:{#$P_A[q].height#}px;">
+                {#section name=w loop=$C#}
+                <cent id="{#$C[w].s_id#}" onclick="c_e('{#$C[w].s_id#}|{#$P_A[q].r_id#}')">{#$C[w].value#}</cent>
+                {#/section#}
+            </lsr>
+        </ls>
+        {#/section#}
+</div>
+</div>

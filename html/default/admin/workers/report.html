@@ -1,0 +1,68 @@
+{#include file="admin/top.html"#}
+<ol class="breadcrumb" id="breadcrumb">
+    <li><a href="#">职工管理</a></li>
+    <li class="active">工作汇报</li>
+</ol>
+<div class="col-sm-8" id="app">
+    <div class="regform">
+
+        <form class="form-horizontal regform" role="form" id="findform">
+            <h1 class="center-block text-center">工作汇报</h1>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">标题</label>
+                <div class="col-sm-6">
+                    <input type="text" class="form-control  noempty" id="student_id" name="student_id"
+                           v-model="report.title"><span id="namehelp" class="help-block hidden">不能为空</span>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label for="coachname" class="col-sm-2 control-label">收件人</label>
+                <div class="col-sm-6">
+                    <select class="form-control hidden" v-model="report.toworker">
+                        <option v-for="worker in workerlist" v-bind="worker.id">{{worker.name}}</option>
+                    </select>
+                    <span id="coachhelp" class="help-block hidden">不能为空</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="reason" class="col-sm-2 control-label">详情</label>
+                <div class="col-sm-6">
+                    <textarea class="form-control  noempty" rows="3" id="reason" name="reason" v-model="report.content"></textarea>
+
+                    <span id="reasonhelp" class="help-block hidden">不能为空</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="button" class="btn btn-primary" v-on:click="subform">提交</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="modal fade" id="messageModel" tabindex="-1" role="dialog" aria-labelledby="messageModelLabel"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="messageModelLabel"></h4>
+                </div>
+                <div class="modal-body" v-text="message"></span></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../html/default/admin/js/workers/report.js">
+
+</script>
+

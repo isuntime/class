@@ -1,0 +1,113 @@
+<style type="text/css">
+
+</style>
+<script type='text/javascript' src='ueditor/ueditor.config.js'></script>
+<script type='text/javascript' src='ueditor/ueditor.all.min.js'></script>
+<script type='text/javascript' src='produce/js/security.class.edit.js'></script>
+<script type='text/javascript' src='../layer/layer.js'></script>
+<div id="show_all_s" style="padding:10px;">
+<ul>
+    <li id="show_one">
+      <div id="new_title">基本信息 / Basic Info </div>
+      <div id="produce_att">
+	  <ul>
+	    <li>
+		    <div class="n_title">类名 / Class Name</div>
+		    <div class="n_input_tab">
+			<input type="text" style="width:500px;" value="{#$Class_edit[0].name#}" name="class_name" id="class_name"/>
+			</div>
+			<div style="width:46px;height:30px;" id="name" class="new_button" onclick="up_class('name|{#$Class_edit[0].random_id#}')">UP</div>
+		</li>
+	    <li>
+		    <div class="n_title">关键词 / Key Word</div>
+			<div class="n_input_tab">
+			<input type="text" style="width:500px;" value="{#$Class_edit[0].keyword#}" name="class_keyword" id="class_keyword"            class="myinput"/>
+			</div>
+			<div style="width:46px;height:30px;" id="keyword" class="new_button" onclick="up_class('keyword|{#$Class_edit[0].random_id#}')">UP</div>
+	    </li>
+		<li>
+			<div class="n_title">描述 / Description</div>
+			<div class="n_input_tab">
+			<input type="text" style="width:500px;" value="{#$Class_edit[0].description#}" name="class_description" id="class_description"/>
+			</div>
+			<div style="width:46px;height:30px;" id="description" class="new_button" onclick="up_class('description|{#$Class_edit[0].random_id#}')">UP</div>
+		</li>
+	    <li>
+		    <div class="n_title">类编码 / Class Rand ID</div>
+			<div class="n_input_tab">
+			<input type="text" style="width:500px;" value="{#$Class_edit[0].random_id#}" name="class_titles" id="class_titles"/>
+			</div>
+			<div style="width:46px;height:30px;" class="new_button" >UP</div>
+		</li>
+		<li>
+			<div class="n_title">链接文件 / Link File</div>
+			<div class="n_input_tab">
+			<input type="text" style="width:500px;" value="{#$Class_edit[0].linkfile#}" name="class_linkfile" id="class_linkfile"/>
+			</div>
+			<div style="width:46px;height:30px;" id="linkfile" class="new_button" onclick="up_class('linkfile|{#$Class_edit[0].random_id#}')">UP</div>
+		</li>
+	  </ul>
+	  <div id="up_imager">
+	    <div onclick="file.click()"  class="mybtn">文件浏览</div>
+		<input type="file" name="file" id="UpFileId" size="28" onchange="document.getElementById('textfield').value=this.value"/>
+		<div onclick="UpladFile()" class="mybtn" style="left:-80px;background:#888888;">上传</div>
+	  </div>
+	  <div style="clear:both;width:1000px;position:relative;height:px;"></div>
+	      <div id="imager_shows" style="background:url({#$Class_edit[0].img_path#}) no-repeat;background-size:200px 200px;"></div>
+	  </div>
+    </li>
+    <li id="show_two">
+	  <div id="new_title">类描述 /Class Describe </div>
+	  <div id="produce_att" style="display:none;left:-210px;">
+	  <input type="hidden" value="{#$Class_edit[0].random_id#}" id="class_random_id">
+          <div style="position:relative;width:950px;margin:0 auto;"><script id='intro' name='11111111' type='text/plain'>{#$Class_edit[0].redme#}</script></div>
+	  </div>
+    </li>
+	<li id="show_three">
+	  <div id="new_title">产品属性 / Produce Attribute </div>
+	  <div id="produce_att" style="display:none;left:-420px;width:1060px;">
+          <div class="left_view">
+{#section name=s loop=$Produce_att#}
+              <div id="pal|{#$Produce_att[s].random_id#}" class="row_att" > 
+                  <div id="palv|{#$Produce_att[s].random_id#}" class="att_name" onclick="Produce_att_view('{#$Produce_att[s].random_id#}')">{#$Produce_att[s].name#}</div>
+				  <div id="palt|{#$Produce_att[s].random_id#}" class="att_type">{#$Produce_att[s].str_type#}</div>
+				  <div id="palx|{#$Produce_att[s].random_id#}" class="att_list">
+{#assign var=NextType value=$Produce_att[s].5#}
+{#section name=q loop=$NextType#}
+                      <label id="{#$NextType[q].system_id#}" onclick="change_att_value('{#$NextType[q].system_id#}|{#$Produce_att[s].random_id#}')">{#$NextType[q].att_value#}</label>
+{#/section#}
+				  </div>
+              </div>
+{#/section#}
+          </div>
+		  <div id="change_att" class="right_view">
+		  
+				<div class="att_tab">
+				    <label style='background:#eeeeee;text-indent:5px;float:left;width:75px;height:35px;font-size:12px;'>属性名称</label>
+				    <label style='background:#e5e5e5;float:left;width:140px;height:35px;'>
+				    <input value='' style='height:35px;width:140px;' id='add_save_input_name'>
+				    </label>
+				</div>
+				
+				<div class="att_tab">
+				    <label style='background:#eeeeee;text-indent:5px;float:left;width:75px;height:35px;font-size:12px;'>显示方式</label>
+				    <label style='background:#e5e5e5;float:left;width:138px;height:33px;border:1px solid #ffffff;cursor:pointer' id='disp_list_add'>
+				    <div id='disp_value_views' style='position:relative;width:138px;height:33px;line-height:33px;text-indent:10px;'>all</div>
+				    <ul id='disp_list_type_xx' style='position:relative;left:-1px;display:none;background:#d5d5d5;padding:0px;margin:0px;cursor:pointer;width:138px;height:60px;z-index:9999;'>
+				    <li style='list-style:none;width:138px;height:30px;border:1px solid #ffffff;padding:0px;margin:0px;'>all</li>
+				    <li style='list-style:none;width:138px;height:30px;border:1px solid #ffffff;padding:0px;margin:0px;'>only</li>
+				    </ul>
+				    </label>
+				</div>
+				
+				<div class="att_tab">			
+				    <label style='background:#ff0040;text-align:center;float:left;width:150px;height:35px;font-size:12px;line-height:35px;color:#ffffff;' id='insert_produce_att_add'>添加 / ADD</label>
+				    </div>
+				</div>		  
+		  
+		  </div>
+	  </div>
+	</li>
+</ul>
+<div style="position:relative;width:80px;height:40px;float:left;" id="web_state"></div>
+</div>

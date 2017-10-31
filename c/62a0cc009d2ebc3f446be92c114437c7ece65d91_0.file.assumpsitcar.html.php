@@ -1,0 +1,241 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-06-15 14:27:28
+  from "/home/wwwroot/jiaxiao/public_html/html/default/admin/student/assumpsitcar.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_594228d0c20e87_55547990',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '62a0cc009d2ebc3f446be92c114437c7ece65d91' => 
+    array (
+      0 => '/home/wwwroot/jiaxiao/public_html/html/default/admin/student/assumpsitcar.html',
+      1 => 1497507961,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:admin/top.html' => 1,
+    'file:admin/finance/PrintVoucher.html' => 1,
+    'file:admin/footer.html' => 1,
+  ),
+),false)) {
+function content_594228d0c20e87_55547990 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:admin/top.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<ol class="breadcrumb col-sm-offset-2">
+    <li><a href="#">学员管理</a></li>
+    <li class="active">约车管理</li>
+</ol>
+<div class="col-sm-8 col-sm-offset-3" id="app">
+    <div class="regform">
+        <h3><strong>约车查询</strong></h3>
+
+        <form class="form-inline regform" role="form" action="" method="post" id="studentfind">
+            <div class="form-group">
+                <label for="student_id" >学号</label>
+
+                <input type="text" class="form-control" id="student_id" name="student_id" placeholder="" v-model="findinfo.student_id">
+
+                <label for="national_id" >身份证号</label>
+
+                <input type="text" class="form-control" id="national_id" name="national_id" placeholder="" v-model="findinfo.national_id">
+
+            </div>
+
+            <!--<div class="form-group">-->
+                <!--<label for="coach" >教练</label>-->
+
+                <!--<select name="coach" id="coach" class="form-control" v-model="findinfo.coach_id">-->
+                    <!--<option v-for="coach in coachlist" v-bind:value="coach.id">{{coach.name}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="" >科目</label>-->
+
+                    <!--<select name="coach" id="coach" class="form-control" v-model="findinfo.subjectType">-->
+                        <!--<option v-for="subject in subjectlist" v-bind:value="subject.id">{{subject.name}}</option>-->
+                    <!--</select>-->
+
+            <!--</div>-->
+
+            <!--<div class="form-group">-->
+                <!--<label for="plateNumber" >车牌号</label>-->
+                <!--<select name="coach" id="coach" class="form-control" v-model="findinfo.car_id">-->
+                    <!--<option v-for="car in carlist" v-bind:value="car.id">{{car.plate_number}}</option>-->
+                <!--</select>-->
+            <!--</div>-->
+            <button type="button" class="btn btn-success" v-on:click="findlist">查询</button>
+            <button type="button" class="btn btn-info" data-toggle="modal" data-target="#myModal" v-on:click="clearEditApp">新增约车</button>
+        </form>
+
+        <div class="regform">
+            <table class="table table-bordered table-hover ">
+                <thead>
+                <td>学号</td>
+                <td>姓名</td>
+                <td>科目</td>
+                <td>车牌号</td>
+                <td>开始时间</td>
+                <td>结束时间</td>
+                <td>操作</td>
+                </thead>
+                <tbody>
+                <tr v-for="item in applist">
+                    <td>{{item.student_id}}</td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.subjecttype}}</td>
+                    <td>{{item.plate_number}}</td>
+                    <td>{{item.stime}}</td>
+                    <td>{{item.etime}}</td>
+                    <td>
+                        <a href="#" class="btn btn-danger " data-toggle="modal" data-target="#PrintVoucher" v-on:click="getInfo(item)"><span
+                                class="glyphicon glyphicon-print" aria-hidden="true"></span>&nbsp;打印</a>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <?php $_smarty_tpl->_subTemplateRender("file:admin/finance/PrintVoucher.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModaLabel"></h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-horizontal" id="resultinoutform">
+                        <div class="form-group">
+                            <label for="student_id1" class="col-sm-3 control-label">学号</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control noempty" id="student_id1" name="student_id"
+                                       placeholder="" v-model="appinfo.student_id">
+
+                            </div>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">姓名</label>
+                            <div class="col-sm-6">
+                                <p class="form-control-static col-sm-4 border" v-text="appinfo.name"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">身份证号码</label>
+                            <div class="col-sm-6">
+                                <p class="form-control-static col-sm-4 border" v-text="appinfo.national_id"></p>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">约车科目</label>
+                            <div class="col-sm-6">
+
+
+                                    <select name="subjecttype" id="coach" class="form-control" v-model="appinfo.subjecttype">
+                                        <option  value="twoAboutPay" >科目二</option>
+                                        <option  value="threeAboutPay">科目三</option>
+                                    </select>
+
+                            </div>
+                            <div class="col-sm-2"><button type="button" class="btn btn-default" @click="nameFilter">查询</button></div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="stime" class="col-sm-3 control-label">开始时间</label>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control findtime noempty" id="stime" name="stime" >
+                                <span id="stimehelp" class="help-block hidden">时间不能为空</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="" class="col-sm-3 control-label">约车时长</label>
+                            <div class="col-sm-6">
+                                <div class="radio">
+                                    <label>
+                                        <input type="radio" value="1" name="timelen" checked v-model="appinfo.timelen">1小时
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="2" name="timelen" v-model="appinfo.timelen"> 2小时
+                                    </label>
+                                    <label>
+                                        <input type="radio" value="3" name="timelen" v-model="appinfo.timelen"> 3小时
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"  form="resultinoutform" v-on:click="subform">提交更改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModal1Label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body">确认取消约车？<span id="stname"></span></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="delstudent" v-on:click="setState">提交更改</button>
+                    <button type="button" class="btn btn-default" data-dismiss="modal" >关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="messageModel" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" v-text="message"></div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary" id="delstudent" v-on:click="toNext">下一步</button>-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+<?php echo '<script'; ?>
+ src="../html/default/admin/js/student/assumpsitcar.js">
+<?php echo '</script'; ?>
+>
+
+
+<?php $_smarty_tpl->_subTemplateRender("file:admin/footer.html", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+
+<?php }
+}

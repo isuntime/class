@@ -1,0 +1,360 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    background-color: #dddddd;
+}
+
+span {
+    display: inline-block;
+}
+
+.main_html {
+    padding: 10px;
+}
+
+.main_html .web_state {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+.main_html ul {
+    position: relative;
+    width: 900px;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    min-height: 40px;
+}
+
+.main_html ul li {
+    position: relative;
+    float: left;
+    width: 200px;
+    list-style: none;
+    padding-right: 10px;
+}
+
+.main_html ul li .note {
+    position: relative;
+    width: 200px;
+    height: 35px;
+    border: 1px solid #f3f3f3;
+    line-height: 35px;
+    text-align: center;
+    color: #fff;
+    background-color: #0080ff;
+}
+
+.main_html ul li .p_a {
+    position: relative;
+    width: 950px;
+    min-height: 520px;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    margin-top: 15px;
+}
+
+.p_a ul {
+    position: relative;
+    height: 230px;
+    background-color: #lilili;
+    text-indent: 10px;
+    line-height: 30px;
+    margin: 0px;
+    padding: 0px;
+    z-index: 999;
+}
+
+.p_a ul li {
+    position: relative;
+    color: #222222;
+    width: 700px;
+    list-style: none;
+    height: 30px;
+    padding-bottom: 15px;
+    float: left;
+    font-size: 12px;
+}
+
+
+/*----------one----------*/
+
+.p_a ul li .n_t {
+    position: relative;
+    border: 1px solid #ffffff;
+    width: 110px;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    text-indent: 10px;
+    background: #ffffff;
+    color: #222222;
+    border-right: 5px solid #ff0040;
+}
+
+.p_a ul li .iput {
+    position: relative;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    border: 1px solid #ffffff;
+    border-left: none;
+    text-indent: 10px;
+    background: transparent;
+    width: 500px;
+}
+
+.p_a ul li .n_b {
+    position: relative;
+    float: left;
+    line-height: 30px;
+    border: 1px solid #ffffff;
+    border-left: none;
+    text-align: center;
+    text-indent: 0px;
+    background: #d90036;
+    color: #ffffff;
+    width: 55px;
+    height: 30px;
+}
+
+.p_a .up_image {
+    position: relative;
+    min-height: 30px;
+    line-height: 30px;
+    min-width: 160px;
+    float: none;
+    display: inline-block;
+}
+
+.p_a .u_img .btn {
+    position: relative;
+    background: #ea003a;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 14px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    width: 78px;
+    padding: 0px;
+    margin: 0px;
+    display: inline-block;
+}
+
+.p_a .u_img .btns {
+    left: -80px;
+    background: #888888;
+}
+
+.p_a .u_img .ipt {
+    position: relative;
+    right: 80px;
+    height: 28px;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+    width: 80px;
+}
+
+.p_a .im_s {
+    position: relative;
+    float: none;
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    background-position: center;
+}
+
+
+/*------------------------------*/
+
+
+/*-------  two   ---------*/
+
+.p_a .tmain {
+    position: relative;
+    width: 950px;
+    margin: 0 auto;
+}
+
+
+/*--------  three  -------928*/
+
+.p_a .l_v {
+    position: relative;
+    width: 728px;
+    min-height: 520px;
+    float: left;
+    display: inline-block;
+}
+
+.p_a .l_v .r_a {
+    position: relative;
+    margin-bottom: 10px;
+    height: 35px;
+    min-width: 728px;
+    float: left;
+    border-bottom: 1px solid #ffffff;
+}
+
+.p_a .l_v .r_a .a_n {
+    position: relative;
+    height: 35px;
+    width: 90px;
+    float: left;
+    line-height: 35px;
+    background: #ffffff;
+    text-indent: 10px;
+}
+
+.p_a .l_v .r_a .a_t {
+    position: relative;
+    height: 35px;
+    width: 30px;
+    float: left;
+    line-height: 35px;
+    background: #ff0040;
+    text-indent: 8px;
+    color: #fff;
+}
+
+.p_a .l_v .r_a .a_l {
+    position: relative;
+    height: 35px;
+    width: 608px;
+    float: left;
+}
+
+.p_a .l_v .r_a .a_l .my_s {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    width: 119px;
+    text-indent: 2px;
+    float: left;
+    background: #0080ff;
+    margin-left: 2px;
+    color: #eeeeee;
+}
+
+.p_a .l_v .r_a .a_l .my_o {
+    position: relative;
+    height: 35px;
+    line-height: 35px;
+    width: 213px;
+    text-indent: 5px;
+    float: left;
+    background: #ff0040;
+    margin-left: 5px;
+    color: #ffffff;
+}
+
+.p_a .r_v {
+    position: relative;
+    height: 200px;
+    width: 220px;
+    background-color: #dddddd;
+    float: left;
+}
+
+.p_a .r_v .a_t {
+    position: relative;
+    float: left;
+    width: 220px;
+    line-height: 35px;
+    margin-bottom: 10px;
+}
+
+.p_a .r_v .a_t .r_t {
+    position: relative;
+    background: #eeeeee;
+    text-indent: 5px;
+    float: left;
+    width: 75px;
+    height: 35px;
+    font-size: 12px;
+}
+
+.p_a .r_v .a_t .ipt {
+    position: relative;
+    height: 33px;
+    width: 138px;
+    float: left;
+    line-height: 35px;
+    text-indent: 10px;
+    font-size: 14px;
+    padding: 0px;
+    margin: 0px;
+    background-color: #e5e5e5;
+    border: 1px solid #ffffff;
+}
+
+.p_a .r_v .a_t .iptw {
+    height: 35px;
+    width: 150px;
+    margin-bottom: 10px;
+    background-color: #E9E8EC
+}
+
+.p_a .r_v .a_t .n_t {
+    background: #eeeeee;
+    text-indent: 5px;
+    float: left;
+    width: 75px;
+    height: 35px;
+    font-size: 12px;
+}
+
+.p_a .r_v .a_t .l_s {
+    background: #e5e5e5;
+    float: left;
+    width: 138px;
+    height: 33px;
+    border: 1px solid #ffffff;
+    cursor: pointer;
+}
+
+.p_a .r_v .a_t .l_s .al {
+    position: relative;
+    width: 138px;
+    height: 33px;
+    line-height: 33px;
+    text-indent: 10px;
+}
+
+.p_a .r_v .a_t .l_s ul {
+    position: relative;
+    left: -1px;
+    display: none;
+    background: #d5d5d5;
+    padding: 0px;
+    margin: 0px;
+    cursor: pointer;
+    width: 138px;
+    height: 60px;
+    z-index: 9999;
+}
+
+.p_a .r_v .a_t .l_s ul li {
+    list-style: none;
+    width: 138px;
+    height: 30px;
+    border: 1px solid #ffffff;
+    padding: 0px;
+    margin: 0px;
+}
+
+.p_a .r_v .a_t .ad {
+    background: #ff0040;
+    text-align: center;
+    float: left;
+    width: 150px;
+    height: 35px;
+    font-size: 12px;
+    line-height: 35px;
+    color: #ffffff;
+}

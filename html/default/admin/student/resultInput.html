@@ -1,0 +1,74 @@
+{#include file="admin/top.html"#}
+<div class="col-sm-8" id="app">
+    <div class="regform">
+        <div class="col-sm-8">
+
+            <form class="form-horizontal"  id="resultinoutform">
+                <h1 class="center-block text-center">成绩录入</h1>
+                <div class="form-group">
+                    <label for="student_id" class="col-sm-2 control-label">学号</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control noempty" id="student_id" name="student_id"
+                               placeholder="" v-model="appinfo.student_id" @change="nameFilter"><span id="namehelp" class="help-block hidden">学号不能为空</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="" class="col-sm-2 control-label">考试科目</label>
+                    <div class="col-sm-6">
+                        <select name="coach" id="coach" class="form-control" v-model="appinfo.subjecttype" @change="nameFilter">
+                            <option v-for="subject in subjectlist" v-bind:value="subject.id">{{subject.name}}</option>
+                        </select>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="testtime" class="col-sm-2 control-label">考试时间</label>
+                    <div class="col-sm-6 ">
+                        <input type="text" class="form-control findtime noempty" id="testtime" name="testtime">
+                        <span id="coachhelp" class="help-block hidden">时间不能为空</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="score" class="col-sm-2 control-label">成绩</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control noempty" id="score" name="score" placeholder="成绩" v-model.lazy="appinfo.ac_num">
+                        <span id="coachhelp" class="help-block hidden">成绩不能为空</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="button" class="btn btn-primary" v-on:click.prevent="subform">提交</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="modal fade" id="messageModel" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" v-text="message"></div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary" id="delstudent" v-on:click="toNext">下一步</button>-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script >
+
+</script>
+
+
+{#include file="admin/footer.html"#}

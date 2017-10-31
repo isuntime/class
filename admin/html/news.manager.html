@@ -1,0 +1,23 @@
+{#include file="top.html"#}
+<div class="me" id="NE">
+	<div class="tit">栏目列表</div>
+	<div class="lis" id="menu_o">
+{#section name=v loop=$NE#}
+		<span class="but" onclick="change_new_list('{#$NE[v].random_id#}')">{#$NE[v].name#}</span>
+{#/section#}
+	</div>
+</div>
+<div class="ht_mi">
+	<div class="le_gu" id="le_gu">
+		<div class="tit" onclick="send_new_file()">发布内容</div>
+		<dl class="new_menu" id="new_menu">
+			<dd id="c_name"></dd>
+			<dd id="c_total"></dd>
+			<dd id="c_rand"></dd>
+		</dl>
+	</div>
+	<dl class="conts" id="content_list">
+		<dd class="rows" id="">
+		</dd>
+	</dl>
+</div>

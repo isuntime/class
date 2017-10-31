@@ -1,0 +1,18 @@
+{#include file="admin/top.html"#}
+<ol class="breadcrumb" id="breadcrumb">
+	<li><a href="#">系统管理</a></li>
+	<li class="active">系统设置</li>
+</ol>
+<div class="col-sm-8" id="app" style="padding:0px;">
+	<div style="position:relative;height:auto;min-width:1143px;border:5px solid #FDEAEA;padding:10px;">
+		<span>新建</span>
+		<div style="position: relative;height: auto;width: 500px;">
+			<ul v-for="item in applist" style="list-style: none;">
+				<li><input type="checkbox" name="hoho"/></li>
+				<li><span v-text="item.department_name"></span></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script src="../html/default/admin/js/system/liucheng.js" ></script>
+{#include file="admin/footer.html"#}

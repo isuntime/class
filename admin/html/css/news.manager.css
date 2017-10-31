@@ -1,0 +1,170 @@
+.me{
+	position:relative;
+	width:1200px;
+
+	min-height:40px;
+	background-color: #FFFFFF;
+	border-top: 5px solid #000000;
+	border-radius: 2px; 
+	box-shadow: 1px 1px 3px #969696;
+	margin:5px auto;
+}
+.me .tit{
+	position: relative;
+	min-height: 40px;
+	width:85px;
+	float:left;
+	border-right: 5px solid #595959;
+	line-height: 40px;
+	font-size:14px;
+	color:#3D3D3D;
+	text-align: center;
+}
+.me .lis{
+	position: relative;
+	height: 40px;
+	width:1110px;
+	background-color: #F0F0F0;
+	box-shadow:1px 1px 3px #BBBBBB;
+	color:#3B3A3A;
+	float:left;
+}
+.me .lis .but{
+	position: relative;
+	width: 150px;
+	float:left;
+	height:40px;
+	font-size: 14px;
+	line-height: 40px;
+	text-indent: 10px;
+	border-right: 1px solid #949494;
+	color: #494949;
+}
+
+.me:hover{
+	box-shadow:1px 1px 3px #2E2E2E;
+	border-top: 5px solid #FC1414;
+}
+.me .lis:hover{
+	background-color: #E6E5E5;
+}
+.me .lis .but:hover{
+	background-color: #959494;
+	text-indent: 10px;
+	color:#FFFFFF;
+	text-align: center;
+	text-indent: 0px;
+	cursor:pointer;
+}
+
+.ht_mi{
+	position: relative;
+	width:1200px;
+	min-height: 300px;
+	margin: 8px auto;
+}
+.ht_mi .le_gu{
+	position: relative;
+	float:left;
+	min-height: 300px;
+	width:185px;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+	margin-bottom: 10px; 
+	margin-right:5px;
+	box-shadow: 1px 1px 3px #969696;
+	padding:2px;
+	border-top:20px solid #353535; 
+}
+.ht_mi .le_gu .tit{
+	position: relative;
+	height: 30px;
+	width: 185px;
+	border-bottom: 2px solid #989898;
+	line-height: 30px;
+	font-size: 14px;
+	color:#434343;
+	text-shadow: 0px 0px 1px #989898; 
+	text-indent: 10px;
+}
+.ht_mi .le_gu .tit:hover{
+	color:#2F2F2F;
+	background-color: #EFEEEE;
+	border-bottom: 2px solid #2F2F2F;
+	text-shadow: 0px 0px 1px #A8A8A8;
+}
+.ht_mi .le_gu .new_menu{
+	position:absolute;
+	bottom:5px;
+	border-radius: 5px;
+	width: 185px;
+	border: 1px solid #E1E1E1;
+	line-height: 30px;
+	font-size: 14px;
+	text-shadow: 0px 0px 1px #A8A8A8; 
+	text-indent: 10px;
+}
+.ht_mi .le_gu .new_menu dd{
+	position: relative;
+	height:30px;
+	width:185px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	
+}
+.ht_mi .le_gu:hover{
+	border-top:20px solid #FF1111;
+	box-shadow: 0px 0px 3px #141414;
+}
+.ht_mi .conts{
+	position: relative;
+	width:990px;
+	min-height: 500px;
+	padding: 5px;
+	margin-left:5px;
+	border-radius: 5px;
+	box-shadow: 1px 1px 3px #969696;
+	float:left;
+	border-top:20px solid #FF0000; 
+}
+
+.ht_mi .conts .rows{
+	position: relative;
+	height: 40px;
+	float:left;
+	width:326px;
+	margin-right: 2px;
+	margin-left: 2px;
+	border-bottom: 3px solid #C6BCBC; 
+	font-size: 14px;
+	line-height: 40px;
+	margin-top:5px;
+	margin-bottom: 5px;
+}
+.ht_mi .conts .rows:hover{
+	border-bottom: 3px solid #404040; 
+	color: #FFFFFF;
+	background-color: #9C9C9C;
+	border-radius: 5px;
+}
+.ht_mi .conts .rows .tit{
+	position: relative;
+	height:40px;
+	float: left;
+	width: 276px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-indent: 20px;
+	
+}
+.ht_mi .conts .rows .edi{
+	position: relative;
+	height:40px;
+	float: left;
+	width: 50px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: center;
+	color: #FFFFFF;
+}

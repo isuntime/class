@@ -1,0 +1,100 @@
+{#$Html_head#}
+<script type='text/javascript' src='../layer/layer.js'></script>
+<input type="hidden" value="{#$P_I[0].random_id#}" id="P_I_random_id"/>
+<div class="sun_main" id="sun_main">
+    <ul class="sun_ul">
+        <li id="li_title_0">
+	        <div class="li_title"  style="width:101px;border-right:none;z-index:889;">基本信息</div>
+	        <div class="li_content" style="top:-40px;display:inline-block">
+	            <div class="content_row">
+		            <row_left class="row_left">产品名称</row_left>
+		            <input class="row_right" type="text" value="{#$P_I[0].produce_name#}" style="width:150px;height:28px;" name="produce_name" id="produce_name" onChange="A_S_P_I_V('produce_name')"/>
+		        </div>
+	            <div class="content_row">
+		            <row_left class="row_left">销售价格</row_left>
+		            <input class="row_right" type="text" value="{#$P_I[0].produce_price#}" style="width:150px;height:28px;" name="prodece_price" id="produce_price" onChange="A_S_P_I_V('produce_price')"/>
+		        </div>
+	            <div class="content_row">
+		            <row_left class="row_left">发布状态</row_left>
+		            <div class="title row_right" id="produce_state_change">
+					    <span>{#$P_I[0].state#}</span>
+			            <ul id="produce_state_change_ul">
+			                <li >产品上架</li>
+			                <li >产品下架</li>
+			            </ul>
+			        </div>
+		        </div>
+		        <div style="clear:both;width:800px;height:1px;position:relative;">
+	                <div id="up_imager">
+	                    <div onclick="file.click()"  class="mybtn" >文件浏览</div>
+		                <input type="file" name="file" id="UpFileIds" size="28" onchange="document.getElementById('textfield').value=this.value"/>
+		                <div onclick="UpladFiles()" class="mybtn" style="background:#888888;">上传</div>
+	                </div>
+	                <div style="clear:both;width:1000px;position:relative;height:px;"></div>
+	                <div id="imager_showss" style="background:url({#$P_I[0].pic#}) no-repeat;background-size:200px 200px;"></div>
+	            </div>		
+	        </div>
+	    </li>
+	    <li id="li_title_1">
+	        <div class="li_title">类别属性</div>
+	        <div class="li_content" style="display:none;top:-90px;z-index:891;">
+	            <dl>
+		            <dd id="table_border">属性名</dd>
+	                <dd>属性值</dd>
+				    <dd></dd>
+	            </dl>
+{#section name=s loop=$V_C_A#}
+	            <dl>
+		            <dd id="table_border">{#$V_C_A[s].1#}</dd>
+	                <dd>
+		                <input name="prodece_c_att[{#$V_C_A[s].random_id#}]" id="prodece_c_att_input{#$V_C_A[s].random_id#}" value="{#$V_C_A[s].5#}" style="height:28px;width:298px;background:#c6c6c6;" onclick="disp_att_value_input('{#$V_C_A[s].random_id#}')"/>
+		                <div id="disp_att_value_input_add{#$V_C_A[s].random_id#}" class="disp_list_menu"></div>
+		            </dd>
+	            </dl>
+{#/section#}
+	        </div>
+	    </li>
+	<li id="li_title_2">
+	  <div class="li_title">产品属性</div>
+	  <div class="li_content" style="display:none;top:-140px;z-index:892;">
+{#section name=vp loop=$view_produce_att#}	  
+	    <dl>
+
+		   <dd id="table_border">{#$view_produce_att[vp].name#}</dd>
+           <dd>
+		       <input id="prodece_p_att_input{#$view_produce_att[vp].random_id#}" value="{#$view_produce_att[vp].6#}" style="height:30px;width:300px;background:#c6c6c6;" onclick="p_disp_att_value_input('{#$view_produce_att[vp].random_id#}')"/>
+		       <div id="p_disp_att_value_input_add{#$view_produce_att[vp].random_id#}" class="disp_list_menu">
+{#assign var=List_value value=$view_produce_att[vp].5#}
+{#section name=lx loop=$List_value#}
+                   <div class='xx_list' onclick="p_change_att_input('{#$view_produce_att[vp].random_id#}|{#$List_value[lx].system_id#}')"id='p_att_value{#$List_value[lx].system_id#}'>{#$List_value[lx].att_value#}</div> 
+{#/section#}		   
+		       </div>
+		   </dd>
+
+         </dl>
+{#/section#}		 
+	  </div>
+	</li>
+	
+	<li id="li_title_3">	
+	  <div class="li_title">图片上传</div>
+	  <div class="li_content" style="display:none;top:-190px;z-index:893;">
+	    <div id="imager_view_s">
+{#section name=p loop=$produce_imager#}
+            <div class="imager_display" onDBLclick="del_imager('{#$produce_imager[p].id#}')" style="background:url({#$produce_imager[p].imager_url#}) no-repeat;background-size:100px 100px;" ></div>
+{#/section#}
+		</div>
+		<div style="position:relative;clear:both;width:800px;height:1px;">
+	    <div  style="position:relative;width:970px;height:30px;">
+            <input type='file' name='file' size='30' id="UpFileId" style="width:150px;float:left;"/>
+            <div style="position:relative;height:28px;width:100px;color:#fff;line-height:28px;border:1px solid #fff;border-left:none;float:left;font-weight:600;text-align:center;font-size:14px;" onclick="UpladFile()">确定上传</div>
+			<div style="position:relative;height:30px;width:300px;float:left;line-height:30px;text-align:center;font-size:14px;font-weight:600;color:#ff0040;">双击图片即可删除图片！</div>
+	    </div>
+	  
+	  
+	  </div>
+	  </div>
+	</li>
+	
+  </ul>
+</div>

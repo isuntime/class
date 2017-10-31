@@ -1,0 +1,50 @@
+{#$HTML_HEAD#}
+<script type='text/javascript' src='../layer/layer.js'></script>
+<div class='service_table'>
+    <div id='service_menu'>
+        <ul id="change_ul">
+            {#section name=s loop=$M_L#}   
+            <li>
+                <div id="menu_title">{#$M_L[s].name#}</div>
+                <div class="change_value">
+                    <div class="produce_att">
+                        <div class="value_list">
+                            <span class="list_left">类名 / Class Name</span>
+                            <span class="list_right" id="c_n_{#$M_L[s].l_id#}">{#$M_L[s].name#}</span>
+                        </div>
+                        <div class="value_list">
+                            <span class="list_left">关键词 / Key Word</span>
+                            <span class="list_right" id="c_k_{#$M_L[s].l_id#}">{#$M_L[s].keyword#}</span>
+                        </div>
+                        <div class="value_list">
+                            <span class="list_left">描述 / Description</span>
+                            <span class="list_right" id="c_d_{#$M_L[s].l_id#}">{#$M_L[s].description#}</span>
+                        </div>
+                        <div class="value_list">
+                            <span class="list_left">类编码 / Class Rand ID</span>
+                            <span class="list_right">{#$M_L[s].r_id#}</span>
+                        </div>
+                        <div class="value_list">
+                            <span class="list_left">链接文件 / Link File</span>
+                            <span class="list_right" id="c_l_{#$M_L[s].l_id#}">{#$M_L[s].linkfile#}</span>
+                        </div>
+                    </div>
+                    <div id="send_button">
+                        <div class="edit_button" onclick="add_produce('{#$M_L[s].r_id#}')">发布产品</div>
+                        <div class="edit_button" onclick="edit_att('{#$M_L[s].r_id#}')">产品属性</div>
+                        <div class="edit_button" onclick="edit_class('{#$M_L[s].r_id#}')">分类属性</div>
+                    </div>
+                </div>
+            </li>
+            {#/section#}
+        </ul>
+    </div>
+    <div class='P_l' id="service_list_xx">
+        {#section name=l loop=$P_L#}
+        <div class='p_list' onClick="S_P_E('{#$P_L[l].r_id#}')" style="background-image:url({#$P_L[l].pic#});">
+            <span class='s_n'>{#$P_L[l].name#}</span>
+            <span class='s_u'>￥:{#$P_L[l].price#}</span>
+        </div>
+        {#/section#}
+    </div>
+</div>

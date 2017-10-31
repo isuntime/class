@@ -1,0 +1,92 @@
+<script type='text/javascript' src='../../ueditor/ueditor.config.js'></script>
+<script type='text/javascript' src='../../ueditor/ueditor.all.min.js'></script>
+<script type='text/javascript' src='produce/js/att.edit.js'></script>
+<script type='text/javascript' src='../layer/layer.js'></script>
+<input type="hidden" value="{#$C_E[0].r_id#}" id="r_id">
+<div class="main_html">
+    <ul>
+        <li id="show_one">
+            <div class="note">基本信息</div>
+            <div class="p_a" id="produce_att">
+                <ul>
+                    <li onchange="up_c('name')" onmouseover="ch_sta('name')" onmouseout="ch_ste('name')">
+                        <span class="n_t">类名</span>
+                        <input type="text" class="iput" value="{#$C_E[0].name#}" id="name" />
+                        <span class="n_b" id="ch_name"></span>
+                    </li>
+                    <li onchange="up_c('key')" onmouseover="ch_sta('key')" onmouseout="ch_ste('key')">
+                        <span class="n_t">关键词</span>
+                        <input type="text" class="iput" value="{#$C_E[0].key#}" id="key" />
+                        <span class="n_b" id="ch_key"></span>
+                    </li>
+                    <li onchange="up_c('descri')" onmouseover="ch_sta('descri')" onmouseout="ch_ste('descri')">
+                        <span class="n_t">描述</span>
+                        <input type="text" class="iput" value="{#$C_E[0].desc#}" id="descri" />
+                        <span class="n_b" id="ch_descri"></span>
+                    </li>
+                    <li>
+                        <span class="n_t">类编码</span>
+                        <input type="text" class="iput" value="{#$C_E[0].r_id#}" />
+                        <span class="n_b"></span>
+                    </li>
+                    <li onchange="up_c('link')" onmouseover="ch_sta('link')" onmouseout="ch_ste('link')">
+                        <span class="n_t">链接文件</span>
+                        <input type="text" class="iput" value="{#$C_E[0].link#}" id="link" />
+                        <span class="n_b" id="ch_link"></span>
+                    </li>
+                </ul>
+                <div class="u_img">
+                    <span onclick="file.click()" class="btn">文件浏览</span>
+                    <input type="file" class="ipt" name="file" id="UFI" size="28" />
+                    <span onclick="ulf()" class="btn btns" style="">上传</span>
+                </div>
+                <div id="im_s" class="im_s" style="background-image:url({#$C_E[0].img#})"></div>
+            </div>
+        </li>
+        <li id="show_two">
+            <div class="note">类描述</div>
+            <div class="p_a" style="display:none;left:-210px;" id="produce_att">
+                <div class="tmain">
+                    <script id='intro' name='intro' type='text/plain'>{#$C_E[0].redme#}</script>
+                </div>
+            </div>
+        </li>
+        <li id="show_three">
+            <div class="note">产品属性</div>
+            <div class="p_a" style="display:none;left:-420px;" id="produce_att">
+                <div class="l_v">
+                    {#section name=s loop=$P_A#}
+                    <div id="pal|{#$P_A[s].r_id#}" class="r_a">
+                        <div id="palv|{#$P_A[s].r_id#}" class="a_n" onclick="P_A_V('{#$P_A[s].r_id#}')">{#$P_A[s].name#}</div>
+                        <div id="palt|{#$P_A[s].r_id#}" class="a_t">{#$P_A[s].value#}</div>
+                        <div id="palx|{#$P_A[s].r_id#}" class="a_l">
+                            {#assign var=C value=$P_A[s].content#} {#section name=q loop=$C#}
+                            <span class="my_s" id="{#$C[q].s_id#}" onclick="C_A_V('{#$C[q].s_id#}|{#$P_A[s].r_id#}')">{#$C[q].value#}</span> {#/section#}
+                        </div>
+                    </div>
+                    {#/section#}
+                </div>
+                <div id="change_att" class="r_v">
+                    <div class="a_t">
+                        <span class="r_t">属性名称</span>
+                        <input type="text" class="ipt" value="" id="add_save_input_name">
+                    </div>
+                    <div class="a_t">
+                        <div class="n_t">显示方式</div>
+                        <div class="l_s" id='disp_list_add'>
+                            <div id='disp_value_views' class="al">all</div>
+                            <ul id='disp_list_type_xx'>
+                                <li>all</li>
+                                <li>only</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="a_t">
+                        <span class="ad" id='insert_produce_att_add' onclick="P_A_A()">添加 / ADD</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="web_state" id="web_state"></div>
+</div>

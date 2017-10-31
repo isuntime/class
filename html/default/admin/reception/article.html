@@ -1,0 +1,62 @@
+
+<!--http://fex.baidu.com/ueditor/#start-toolbar  富文本编辑器文档地址-->
+
+<form class="form-horizontal regform"  id="articleinfo">
+
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">标题</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control noempty" id="title" name="title"
+                   placeholder=""><span  class="help-block hidden">不能为空</span>
+        </div>
+
+    </div>
+
+    <div class="form-group">
+        <label for="" class="col-sm-2 control-label">所属栏目</label>
+        <div class="col-sm-10">
+            <select name="colunm" id="colunm" class="form-control">
+                <option value="1" selected>dad</option>
+                <option value="2" >x</option>
+                <option value="3" >可xx用</option>
+                <option value="4" >考xxx费用</option>
+                <option value="5" >退学xxx退费</option>
+                <option value="6" >其他xxx费用</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <!-- 加载编辑器的容器 -->
+        <div class="col-sm-10 col-sm-offset-2">
+            <script id="container" name="content" type="text/plain" >
+
+            </script>
+        </div>
+
+        <link href="../html/default/umeditor/themes/default/css/ueditor.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript" src="../html/default/umeditor/third-party/template.min.js"></script>
+        <!-- 配置文件 -->
+        <script type="text/javascript" src="../html/default/umeditor/ueditor.config.js"></script>
+        <!-- 编辑器源码文件 -->
+        <script type="text/javascript" charset="utf-8" src="../html/default/umeditor/ueditor.all.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="../html/default/umeditor/lang/zh-cn/zh-cn.js"></script>
+        <!-- 实例化编辑器 -->
+        <script type="text/javascript">
+            var ue = UE.getEditor('container');
+        </script>
+
+
+    </div>
+
+
+
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success">提交</button>
+        </div>
+    </div>
+
+</form>

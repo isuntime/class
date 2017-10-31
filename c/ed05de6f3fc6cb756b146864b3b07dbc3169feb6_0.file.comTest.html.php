@@ -1,0 +1,264 @@
+<?php
+/* Smarty version 3.1.30, created on 2017-10-25 00:01:20
+  from "/home/wwwroot/bzrdjx/public_html/html/default/admin/student/comTest.html" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.30',
+  'unifunc' => 'content_59ef63d0547340_56999750',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    'ed05de6f3fc6cb756b146864b3b07dbc3169feb6' => 
+    array (
+      0 => '/home/wwwroot/bzrdjx/public_html/html/default/admin/student/comTest.html',
+      1 => 1508860877,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_59ef63d0547340_56999750 (Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+    <div class="regform clearfix">
+        <div class="">
+            <form class="form-inline regform" role="form" action="" method="post"
+                  id="studentfind">
+                <div class="form-group">
+                    <label for="national_id1" class="">身份证号</label>
+
+                        <input type="text" class="form-control" id="national_id1" name="national_id" placeholder="" v-model="find.national_id">
+
+                    <!--<label for="student_id1" class="">学号</label>-->
+
+                        <!--<input type="text" class="form-control" id="student_id1" name="student_id" placeholder="" v-model="find.student_id">-->
+
+
+
+
+
+                </div>
+                <div class="form-group">
+                    <button type="button" class="btn btn-success" v-on:click="findlist">查询</button>
+                </div>
+
+            </form>
+            <div class="regform">
+
+
+                <table class="table table-bordered table-hover table-responsive" >
+                    <thead>
+                    <th >学号</th>
+                    <th >姓名</th>
+                    <td>教练名称</td>
+                    <td>考驾类型</td>
+                    <th >证件号码</th>
+                    <th >注册时间</th>
+                    <th >科一状态</th>
+                    <th >科二状态</th>
+                    <th >科三状态</th>
+                    <th >科四状态</th>
+                    <th >操作</th>
+                    </thead>
+                    <tbody>
+                    <tr v-for="item in applists.job.data">
+                        <td>{{item.student_id}}</td>
+                        <td>{{item.name}}</td>
+                        <td>{{item.coach_name}}</td>
+                        <td>{{item.vehicle_type}}</td>
+                        <td>{{item.national_id}}</td>
+                        <td>{{item.reg_time}}</td>
+                        <td>{{item.subjectOneState | stateText}}</td>
+                        <td>{{item.subjectTwoState | stateText}}</td>
+                        <td>{{item.subjectThreeState | stateText}}</td>
+                        <td>{{item.subjectFourState | stateText}}</td>
+                        <td>
+                            <a href="#" class="btn btn-info " data-toggle="modal" data-target="#myModal2" v-on:click="getbksqlist1(item)"><span
+                                    class="glyphicon glyphicon-pencil"
+                                    aria-hidden="true"></span>&nbsp;补考记录</a>
+                            <a href="#" class="btn btn-success " data-toggle="modal" data-target="#myModal1" v-on:click="getbksqlist(item)"><span
+                                    class="glyphicon glyphicon-pencil"
+                                    aria-hidden="true"></span>&nbsp;考试申请</a>
+                        </td>
+                    </tr>
+
+                    </tbody>
+                </table>
+                <nav>
+                    <ul class="pagination">
+                        <li  @click="pageMinus(applists.job.pageIndex,gotoJob)" ><a href="#">上一页</a></li>
+                        <li v-for="(item,index) in applists.job.pageAll" v-bind:class="{ 'active': applists.job.pageIndex == index}" @click="gotoJob(index)"><a href="#">{{index+1}} <span class="sr-only"></span></a></li>
+                        <li @click="pagePlus(applists.job.pageIndex,gotoJob)"><a href="#" >下一页</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document" style="width:800px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title text-center" id="exampleModalLabel">补考记录</h4>
+                        </div>
+                        <div class="modal-body">
+                            <table class="table table-bordered table-hover " style="width:100%;">
+                                <thead>
+                                <td>订单编号</td>
+                                <td>科目名称</td>
+                                <td>缴费金额</td>
+                                <td>考试时间</td>
+                                <td>缴费状态</td>
+                                <td>考试成绩</td>
+                                </thead>
+                                <tbody>
+                                <tr v-for="item in appinfo1" v-bind:class="{danger:!item.pay_state}">
+                                    <td v-text="item.order_id"></td>
+                                    <td v-text="item.ch_name"></td>
+                                    <td >￥{{item.money}}</td>
+                                    <td v-text="item.testtime"></td>
+                                    <td v-text="">{{item.pay_state|pay_mentfilter}}</td>
+                                    <td v-text="item.point"></td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document" style="width:800px;">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title text-center" id="exampleModalLabel">考试申请</h4>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-horizontal"  id="retestform">
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label">身份证号码</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control  noempty" id="national_id" name="national_id"
+                                               v-model="appinfo.national_id">
+                                    </div>
+                                    <div class="col-sm-2"><button type="button" class="btn btn-default" @click="nameFilter">查询</button></div>
+
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label">姓名</label>
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static col-sm-4 border" v-text="appinfo.name"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+
+                                    <label for="student_id" class="col-sm-4 control-label">学号</label>
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static col-sm-4 border" v-text="appinfo.student_id"></p>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label">考试科目</label>
+                                    <div class="col-sm-6">
+                                        <p class="form-control-static col-sm-4 border" v-text="appinfo.subject.ch_name"></p>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="" class="col-sm-4 control-label">考试费用</label>
+                                    <div class="col-sm-6">
+                                    <template v-if="appinfo.subject.needpay === 0">
+                                        <input placeholder="请输入考试费用" key="pay-input" v-model="appinfo.subject.subject_price" type="text" class="form-control findtime noempty" id="money" name="money">
+                                    </template>
+                                    <template v-else>
+                                        <p class="form-control-static col-sm-4 border" v-text="appinfo.subject.subject_price"></p>
+                                    </template>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="testtime" class="col-sm-4 control-label">考试时间</label>
+                                    <div class="col-sm-6">
+                                        <input type="text" class="form-control findtime noempty" id="testtime" name="testtime">
+                                        <span id="coachhelp" class="help-block hidden">时间不能为空</span>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <div class="col-sm-offset-4 col-sm-2">
+                                        <button type="button" class="btn btn-primary" v-on:click.prevent="subform">提交</button>
+                                    </div>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+
+    <div class="modal fade" id="messageModel" tabindex="-1" role="dialog" aria-labelledby="myModal1Label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title" id="myModalLabel"></h4>
+                </div>
+                <div class="modal-body" v-text="message"></div>
+                <div class="modal-footer">
+                    <!--<button type="button" class="btn btn-primary" id="delstudent" v-on:click="toNext">下一步</button>-->
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php }
+}

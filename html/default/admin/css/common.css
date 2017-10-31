@@ -1,0 +1,121 @@
+/*html{*/
+    /*background:#CCCCCC;*/
+/*}*/
+.table{
+    width:auto;
+}
+
+
+.table > thead > tr > th,
+.table > tbody > tr > th,
+.table > tfoot > tr > th,
+.table > thead > tr > td,
+.table > tbody > tr > td,
+.table > tfoot > tr > td {
+    min-width: 100px;
+    line-height:38px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
+.navbar-inverse {
+    background-color: #0099CC;
+    border-color: #6b6b6b;
+}
+
+
+.navbar-fixed-top {
+    top: 0;
+    border-width: 0 0 2px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.regform{
+    margin-top:15px;
+}
+.regform a{
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+p.form-control-static .border,  .border{
+    width:100%;
+    border: 1px solid #eee;
+    background: #eee;
+}
+
+.photo{
+    width:150px;
+    height:175px;
+
+    position: relative;
+    overflow:hidden !important;
+}
+
+.photo-img{
+    position: absolute;
+    left:-75px;
+    top:-32.5px;
+}
+#app{
+    background: #fff;
+    border-radius: 10px;
+}
+#app, #breadcrumb{
+    position: relative;
+    top:0;
+    left:265px;
+
+}
+
+#breadcrumb{
+    width:80%;
+}
+/*@media print {*/
+    /*#PrintInfo{*/
+        /*width: 14.8cm;*/
+        /*height:10.4cm;*/
+        /*margin-bottom:0.1cm;*/
+        /*margin-right:0.1cm;*/
+    /*}*/
+    /*@page {*/
+        /*margin: 0;*/
+        /*size: A4 landscape !important;*/
+    /*}*/
+    /*img {*/
+        /*max-width: 100% !important;*/
+    /*}*/
+/*}*/
+
+

@@ -1,0 +1,102 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+    background-color: #dddddd;
+}
+
+span {
+    display: inline-block;
+}
+
+.main_html {
+    padding: 10px;
+}
+
+.main_html .web_state {
+    position: relative;
+    width: 100px;
+    height: 40px;
+    float: left;
+}
+
+hm {
+    position: relative;
+    width: 950px;
+    float: left;
+    height: 300px;
+}
+
+hm et {
+    position: relative;
+    height: 40px;
+    width: 950px;
+    margin: 5px;
+    border-bottom: 2px solid #0080ff;
+}
+
+hm et .btn {
+    position: relative;
+    height: 30px;
+    border: 1px solid #ffffff;
+    width: 150px;
+    cursor: pointer;
+    color: #ffffff;
+    line-height: 30px;
+    text-align: center;
+    background: #0080ff;
+    float: left;
+}
+
+hm et .ipt {
+    position: relative;
+    height: 28px;
+    border: 1px solid #ffffff;
+    line-height: 28px;
+    width: 150px;
+    text-indent: 10px;
+    float: left;
+}
+
+hm ls {
+    position: relative;
+    width: 950px;
+    font-size: 12px;
+    float: left;
+    margin-left: 5px;
+    padding: 2px 0 0 0;
+}
+
+hm ls lsl {
+    position: relative;
+    height: 30px;
+    width: 245px;
+    border-right: 5px solid #ff0040;
+    float: left;
+    color: #333333;
+    background-color: #ffffff;
+    line-height: 30px;
+    cursor: pointer;
+    text-indent: 10px;
+}
+
+hm ls lsr {
+    position: relative;
+    float: left;
+    width: 700px;
+    display: inline-block;
+}
+
+hm ls lsr cent {
+    position: relative;
+    height: 29px;
+    width: 138px;
+    border-bottom: 1px solid #dddddd;
+    float: left;
+    color: #333333;
+    background-color: #ffffff;
+    text-indent: 3px;
+    margin: 0px 0px 0px 2px;
+    line-height: 30px;
+    cursor: pointer;
+}

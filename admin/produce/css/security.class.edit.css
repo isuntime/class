@@ -1,0 +1,159 @@
+body{padding:0px;margin:0px;font-size:12px;background-color:#dddddd;}
+ul{position:relative;width:900px;;margin:0px;padding:0px;float:left;height:40px;}
+li{position:relative;;float:left;width:200px;height:35px;list-style:none;padding-right:10px;}
+li #new_title{
+	position:relative;
+	width:200px;
+	height:35px;
+	border:1px solid #f3f3f3;
+	line-height:35px;
+	text-align:center;
+	color:#fff;
+	background-color:#0080ff;}
+#produce_att{position:relative;width:950px;height:540px;padding:10px;border:1px solid #ffffff;margin-top:15px;}
+#produce_att ul{
+    position:relative;
+	height:230px;
+	background-color:#lilili;
+	text-indent:10px;
+	line-height:30px;
+	margin:0px;
+	padding:0px;
+z-index:999;	
+}
+#produce_att ul li{
+    position:relative;
+	color:#222222;
+	width:700px;
+	list-style:none;
+	height:30px;
+	padding-bottom:15px;
+	float:left;
+	font-size:12px;
+}
+input{position:relative;float:left;height:32px;line-hieght:30px;border:1px solid #ffffff;border-left:none;text-indent:10px;background:transparent;}
+#produce_att .n_title{
+	position:relative;
+	border:1px solid #ffffff;
+	width:145px;
+	height:30px;
+	line-hieght:30px;
+	float:left;
+	text-indent:10px;
+	background:#ffffff;
+	color:#222222;
+	border-right:5px solid #ff0040;
+	}
+#produce_att .n_input_tab{position:relative;float:left;width:500px;height:30px;}
+#produce_att .new_button{position:relative;float:left;height:32px;line-hieght:30px;border:1px solid #ffffff;border-left:none;text-align:center;text-indent:0px;background:#d90036;color:#ffffff;}
+/* 左边的栏目*/
+#produce_att .left_view{
+	position:relative;
+	width:840px;
+	height:520px;
+	float:left;
+}
+#produce_att .left_view .row_att{
+	position:relative;
+	margin-bottom:10px;
+	height:35px;
+	width:830px;
+	float:left;
+	border-bottom:1px solid #ffffff;
+}
+
+#produce_att .left_view .row_att .att_name{
+	position:relative;
+	height:35px;
+	width:150px;
+	float:left;
+	line-height:35px;
+	background:#ffffff;
+	text-indent:10px;
+}
+
+#produce_att .left_view .row_att .att_type{
+	position:relative;
+	height:35px;
+	width:40px;
+	float:left;
+	line-height:35px;
+	background:#ff0040;
+	text-indent:8px;
+	color:#fff;
+}
+#produce_att .left_view .row_att .att_list{
+	position:relative;
+	height:35px;
+	width:640px;
+	float:left;
+}
+.att_list .my_label{
+	position:relative;
+	height:35px;
+	line-height:35px;
+	width:123px;
+	text-indent:5px;
+	float:left;
+	background:#0080ff;
+	margin-left:5px;
+	color:#eeeeee;
+}
+.att_list label{
+	position:relative;
+	height:35px;
+	line-height:35px;
+	width:123px;
+	text-indent:5px;
+	float:left;
+	background:#0080ff;
+	margin-left:5px;
+	color:#eeeeee;
+}
+/* 右边的框框 这个要改小点*/
+#produce_att .right_view{
+	position:relative;
+	height:200px;
+	width:220px;
+	background-color:#dddddd;
+	float:left;}
+.right_view .att_tab{
+	position:relative;
+	float:left;
+	width:220px;
+	line-height:35px;
+	margin-bottom:10px;}
+/* 下面是图片上传的按钮*/
+#up_imager{
+    position:relative;
+	height:30px;
+	line-height:30px;
+	width:820px;
+	text-indent:27px;
+	float:flet;
+	text-indent:0px;
+}
+
+#up_imager input{
+	position:relative;
+	top:0;
+	right:50px;
+	height:24px;
+	filter:alpha(opacity:0);
+	opacity:0;
+	width:82px;}
+#up_imager .mybtn{
+    position:relative;
+	background:#ea003a;
+	color:#fff;
+	border:1px solid #fff;
+	font-size:14px;
+	height:28px;
+	line-height:28px;
+	text-align:center;
+    width:80px;
+	float:left;
+	padding:0px;
+	margin:0px;
+}
+#imager_shows{postion:relative;float:left;height:200px;width:200px;}

@@ -1,0 +1,257 @@
+body {
+    padding: 0px;
+    margin: 0px;
+    font-size: 12px;
+}
+input {
+    position: relative;
+    text-indent: 10px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    color: #ffffff;
+}
+.html_main {
+    position: relative;
+    min-height:300px;
+    width:1090px;
+    padding: 5px;
+    background: #eeeeee;
+}
+
+.html_body {
+    position: relative;
+    width: inherit;
+    padding: 0px;
+    height: inherit;
+    margin: 0px;
+}
+
+.html_body li {
+    position: relative;
+    list-style: none;
+    height: 30px;
+    width: 100px;
+    line-height: 30px;
+    z-index: 999;
+    margin-bottom: 10px;
+}
+
+.html_body li m_t {
+    position: relative;
+    height: 38px;
+    border: 1px solid #ffffff;
+    width: 100px;
+    line-height: 38px;
+    text-indent: 10px;
+    color: #ffffff;
+    background: #b9b9b9;
+    z-index: 999;
+    display: inline-block;
+}
+
+.html_body li m_c {
+    position: relative;
+    min-height: 400px;
+    width: 978px;
+    border: 1px solid #ffffff;
+    left: 101px;
+    padding: 5px;
+    background: #cccccc;
+}
+
+.html_body li m_c cont {
+    position: relative;
+    height: 30px;
+    width: 300px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.html_body li m_c cont r_l {
+    position: relative;
+    height: 30px;
+    width: 100px;
+    border: 1px solid #ffffff;
+    float: left;
+    line-height: 30px;
+    text-indent: 10px;
+    color: #ffffff;
+}
+
+.html_body li m_c cont input {
+    position: relative;
+    float: left;
+    width: 150px;
+    height: 28px;
+}
+
+.html_body li m_c cont .row_right {
+    position: relative;
+    height: 30px;
+    float: left;
+}
+
+.html_body li m_c cont tit {
+    position: relative;
+    height: 30px;
+    width: 148px;
+    border: 1px solid #fff;
+    line-height: 28px;
+    text-align: center;
+    border-left: none;
+    font-size: 14px;
+    color: #fff;
+}
+
+.html_body li m_c cont tit ul {
+    -borderlwe-image-source: u[8hnle] position: relative;
+    display: none;
+    margin: 0px;
+    padding: 0px;
+    width: 150px;
+}
+
+.html_body li m_c cont tit ul li {
+    margin: 0px;
+    padding: 0px;
+    height: 30px;
+    width: 148px;
+    border: 1px solid #fff;
+    border-top: none;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.html_body li m_c cont up_imag input {
+    position: relative;
+    left: -82px;
+    height: 30px;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+    width: 82px;
+}
+
+.html_body li m_c cont up_imag .colo {
+    background: #888888;
+    left: -82px;
+}
+
+.html_body li m_c cont up_imag btn {
+    position: relative;
+    background: #ea003a;
+    color: #fff;
+    border: 1px solid #fff;
+    font-size: 14px;
+    line-height: 28px;
+    text-align: center;
+    width: 80px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+.html_body li m_c note {
+    position:relative;
+    height:30px;
+    width:200px;
+    float:left;
+    line-height:30px;
+    font-size:14px;
+    font-weight:600;
+    color:#ff0040;
+}
+.html_body li m_c show_im {
+	float:none;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    background-repeat: no-repeat;
+    background-size: 200px 200px;
+    display: inline-block;
+}
+
+
+/* 用于第二个li*/
+
+.html_body li m_c dl {
+    position: relative;
+    padding: 0px;
+    margin: 0px;
+    height: 30px;
+    margin-bottom: 10px;
+    width: 986px;
+}
+
+.html_body li m_c dl t_b{
+	border: 1px solid #ffffff;
+    border-right: none;
+    text-indent: 10px;
+    height: 30px;
+    width: 300px;
+    float: left;
+    line-height: 28px;
+    color: #fff;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.html_body li m_c dl dd {
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 500px;
+    margin: 0px;
+    line-height: 28px;
+    color: #fff;
+    background-color: #c1c1c1;
+}
+
+.html_body li m_c dl dd input {
+	border: 1px solid #ffffff;
+    position: relative;
+    text-indent: 10px;
+    background-color: transparent;
+    color: #ffffff;
+    height: 28px;
+    width: 498px;
+    background: #c6c6c6;
+}
+
+.html_body li m_c dl dd .dlm {
+    position: relative;
+    width: 498px;
+    display: none;
+    z-index: 9999;
+}
+
+.html_body li m_c dl dd .dlm xl {
+    height: 30px;
+    border: 1px solid #eeeeee;
+    color: #ffffff;
+    background: #999999;
+    border-top: none;
+    width: 498px;
+    text-indent: 10px;
+    z-index: 9999;
+    display: inline-block;
+}
+
+.html_body li m_c im_l {
+    position: relative;
+    min-width: 970px;
+    height: 105px;
+    padding: 5px;
+    float:none;
+    display: inline-block;
+}
+
+.html_body li m_c im_l im_d{
+    position: relative;
+    height: 100px;
+    width: 100px;
+    margin-bottom: 5px;
+    margin-right: 5px;
+    float: left;
+    background-repeat: no-repeat;
+    background-size:100px 100px;
+}

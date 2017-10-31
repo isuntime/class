@@ -1,0 +1,75 @@
+<html>
+<meta http-equiv='x-ua-compatible' content='ie=8' />
+<meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+
+<head>
+    <title>新产品添加</title>
+</head>
+<style type="text/css">
+* {
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    font-size: 14px;
+}
+
+#h_header {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    min-width: 1200px;
+    background-color: #aaaaaa;
+    margin: 0 auto;
+}
+
+#h_header .produce_att {
+    position: relative;
+    width: 1200px;
+}
+
+#h_main {
+    position: relative;
+    height: auto;
+    width: 100%;
+    min-width: 1200px;
+    margin: 0 auto;
+}
+</style>
+
+<body>
+    <!----发布新产品----->
+    <div style="position:relative;width:100%;height:auto;">
+        <div id="h_header">
+            <div></div>
+            <div class="produce_att">
+                <div style="position:relative;width:100px;height:{#$produce_att_height#}px;float:left;background:#aaaaaa;color:ffffff;text-align:center;">产品属性</div>
+                <div style="position:relative;float:left;width:1000px;height:{#$produce_att_height#}px;background:#aaaaaa;">
+                    <!---这里用JQUERY写一个下拉选择- jquery select start--->
+                    {#section name=s loop=$produce_att#}
+                    <div style="width:196px;height:30px;float:left;text-indent:10px;padding:5px 2px 2px 2px;">
+                        <div style="position:relative;width:98px;height:30px;float:left;border:1px solid #ffffff;">{#$produce_att[s][1]#}</div>
+                        <div style="position:relative;width:95px;height:30px;float:left;border:1px solid #ffffff;border-left:none;">
+                            {#assign var=NextType value=$produce_att[s].4#}
+                            <div class="{#$produce_att[s][3]#}" onclick="view_select('{#$produce_att[s][3]#}')" style="width:95px;height:30px;">{#$NextType[0][1]#}</div>
+                            <ul id="{#$produce_att[s][3]#}" style="position:relative;hieght:auto;width:90px;display:none;left:-1px;">
+                                {#section name=q loop=$NextType#}
+                                <li style="position:relative;list-style:none;width:95px;height:30px;line-height:30px;background:#0080ff;border:1px solid #ffffff;border-top:none;z-index:999;">{#$NextType[q][1]#}</li>
+                                {#/section#}
+                            </ul>
+                        </div>
+                    </div>
+                    {#/section#}
+                    <!---jquery select end -------->
+                </div>
+            </div>
+        </div>
+        <div id="h_main">
+            <div id="b_edit">
+                <!--baidu b_editer-->
+            </div>
+        </div>
+    </div>
+    {#$Menu_list#}
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<?php
+include_once "../web.config.php";
+include_once "../../lib.inc.php";
+$action=if_is(sql_D(trim($_POST[action])),sql_D(trim($_GET[action])));
+switch($action){ 
+	case "ad_new_class";
+		$P_A->ad_new_class($_POST['r_id'],$_POST['value']);
+	break;
+	case "ad_b_c";
+		$P_A->ad_b_c();
+	break;
+	case "delete_class_att";
+		$P_A->delete_class_att($_POST['r_id'],$_POST['c_id']);
+	break;
+	case "get_a_s";
+		$P_A->get_a_s($_POST['r_id'],$_POST['c_id']);
+	break;
+	case "children_value";
+		$P_A->add_children_value($_POST['r_id'],$_POST['value']);
+	break;
+	case "edit_service";
+	    $P_A->edit_service($_POST['r_id'],$_POST['value']);
+	break;
+	case "get_children_value";
+		$P_A->get_children_value($_POST['r_id'],$_POST['s_id']);
+	break;
+	case "edit_children_value";
+	    $P_A->edit_children_value($_POST['r_id'],$_POST['s_id'],$_POST['value']);
+	break;
+	case "del_children_value";
+	    $P_A->del_children_value($_POST['r_id'],$_POST['s_id']);
+	break;
+	//yi xia zhu yao shi dui chan pin de shu xing jin xing xiu gai !
+	case "up_class_value";
+		echo json_encode($P_A->up_class_value($_POST['c_r_id'],$_POST['i_a'],$_POST['i_v']));
+	break;
+	case "up_produce_att";
+		echo json_encode($P_A->up_produce_att($_POST['r_id'],$_POST['i_a'],$_POST['i_v']));
+	break;
+	case "add_produce_att_value";
+		$P_A->add_produce_att_value($_POST['r_id'],$_POST['i_v']);
+	break;
+	case "produce_att_view";
+		$P_A->produce_att_view($_POST['p_a_r_id']);
+	break;
+	case "view_produce_att_value";
+		$P_A->view_produce_att_value($_POST['p_a_r_id']);
+	break;
+	case "change_att_value";
+		$P_A->change_att_value($_POST['s_id'],$_POST['r_id']);
+	break;
+	case "up_produce_att_value_xx";
+		echo json_encode($P_A->up_produce_att_value_xx($_POST[s_id],$_POST[r_id],$_POST[i_v]));
+	break;
+	case "add_produce_att";
+	    $P_A->add_produce_att($_POST['r_id'],$_POST['i_v'],$_POST['s_c']);
+	break;
+	////// yi xia jiu shi chan pin zhan shi fang mian shi qing liao !
+	case "up_produce_value";
+		$P_A->aspv($_POST['a_n'],$_POST['v_s'],$_POST['p_id']);
+	break;
+	case "cpcv";
+		$P_A->cpcv($_POST['r_id']);
+	break;
+	case "cpcv_up";
+		$P_A->cpcv_up($_POST['p_id'],$_POST['r_id'],$_POST['s_id']);
+	break;
+	case "cpav";
+		$P_A->cpav($_POST['r_id']);
+	break;
+	case "cpav_up";
+		$P_A->cpav_up($_POST['p_id'],$_POST['r_id'],$_POST['s_id']);
+	break;
+	case "del_imager";
+		$P_A->del_imager($_POST['p_id'],$_POST['del_id']);
+	break;
+	default:
+		echo "error !";
+	break;
+}
+?>

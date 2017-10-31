@@ -1,0 +1,46 @@
+.ht_ma{
+	position: relative;
+	height:150px;
+}
+.h_ma{
+	position: relative;
+	width: 492px; 
+	border: 1px solid #CECECE;
+	min-height:135px;
+	margin-top: 5px;
+	float:left;
+}
+.h_ma .row{
+	position: relative;
+	float:left;
+	height:40px;
+	line-height: 40px;
+	width: 240px;
+	padding: 0px;
+	margin:2px 3px 2px 3px;
+}
+.h_ma .row .rows{
+	position: relative;
+	font-size:12px;
+	float: left;
+	height:40px;
+	width:50px;
+	text-overflow:ellipsis;
+	overflow: hidden;
+	padding: 0px;
+	margin: 0px;
+	background-color: #ECECEC;
+}
+.h_ma .row .rows .ipt{
+	position: relative;
+	height:26px;
+	line-height:26px;
+	border: 1px solid #DCDCDC;
+	text-indent:10px;
+	width:170px;
+}
+.editer{
+	position:relative;
+	width:993px;
+	clear: both;
+}
